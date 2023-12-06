@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="author" content="Bimbó Csaba" />
+    <meta name="copyright" content="PC-s game platforms" />
+    <link rel="shortcut icon" href="./Kepek/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>SzJSz - Kérdőív</title>
+    <script src="./Scriptek/script.js"></script>
+    <script src="./Scriptek/jquery-3.7.1.min.js"></script>
+    <script src="./Scriptek/jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#myform").validate({
+          rules: {
+            nev: "required",
+            email: {
+              required: true,
+              email: true,
+            },
+            telefonszam: "digits",
+            iranyitoszam: {
+              digits: true,
+              required: true,
+              minlength: 4,
+              maxlength: 4,
+            },
+            szul_datum: "required",
+          },
+          messages: {
+            nev: "Ezt a mezőt kötelező kitölteni!",
+            email: {
+              required: "Ezt a mezőt kötelező kitölteni!",
+              email: "Kérlek valós email címet adj meg!",
+            },
+            telefonszam: "Kérlek valós telefonszámot adj meg!",
+            iranyitoszam: {
+              required: "Ezt a mezőt kötelező kitölteni!",
+              digits: "Kérlek valós irányítószámot adj meg!",
+              minlength: "Érvényes irányítószámot adj meg!",
+              maxlength: "Érvényes irányítószámot adj meg!",
+            },
+            szul_datum: "Ezt a mezőt kötelező kitölteni!",
+          },
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <header class="background">
+      <h1 class="title">Számítógépes Játékmegosztó Szolgáltatások</h1>
+
+      <nav>
+        <ul>
+          <li><a href="./fooldal.html">Főoldal</a></li>
+          <li><a href="./steam.html">Steam</a></li>
+          <li><a href="./epic_games.html">Epic Games</a></li>
+          <li><a href="./kerdoiv.html" class="current">Kerdőív</a></li>
+        </ul>
+      </nav>
+    </header>
+    <article>
+      <div class="szoveg">
+        <h2>Játékokkal kapcsolatos kérdőív</h2>
+        <hr />
+        <form
+          action="http://szamtud.uni-corvinus.hu/receive.php"
+          method="post"
+          id="myform"
+          novalidate
+        >
+          <div class="kerdo">
+            <div class="szakasz">
+              <p class="szakaszcim">1. Személyes adatok</p>
+              <label
+                >Név:
+                <input type="text" placeholder="Kiss Béla" size="10" name="nev"
+              /></label>
+              <br />
+              <label
+                >Email cím:
+                <input
+                  type="email"
+                  placeholder="pelda@email.hu"
+                  size="18"
+                  name="email"
+              /></label>
+              <br />
+              <label
+                >Telefonszám:
+                <input
+                  type="tel"
+                  placeholder="+36 123 4567"
+                  size="8"
+                  name="telefonszam"
+              /></label>
+              <br />
+              <label
+                >Születési dátum:
+                <input type="date" name="szul_datum" class="datum_kerdo"
+              /></label>
+              <br />
+              <label
+                >Irányítószám:
+                <input
+                  type="text"
+                  size="4"
+                  placeholder="1222"
+                  name="iranyitoszam"
+              /></label>
+            </div>
+            <hr />
+            <div class="szakasz">
+              <p class="szakaszcim">2. Platformmal kapcsolatos kérdések</p>
+              <p class="kerdes">Milyen eszközö(k)ön játszik?</p>
+              <section class="felsorolas">
+                <label
+                  ><input
+                    type="checkbox"
+                    value="szamitogep"
+                    name="eszkoz[]"
+                    class="pipal"
+                  />
+                  Számítógép</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    value="laptop"
+                    name="eszkoz[]"
+                    class="pipal"
+                  />
+                  Laptop</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    value="ps5"
+                    name="eszkoz[]"
+                    class="pipal"
+                  />
+                  PS5</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    value="xbox"
+                    name="eszkoz[]"
+                    class="pipal"
+                  />
+                  Xbox Series</label
+                >
+              </section>
+              <p class="kerdes">
+                Az alábbiak közül melyik számítógépes játékmegosztó
+                szolgáltatást használja?
+              </p>
+              <section class="felsorolas">
+                <select name="szjsz[]" id="szjsz" multiple="multiple">
+                  <option value="steam">Steam</option>
+                  <option value="epicgames">Epic Games</option>
+                  <option value="ubisoft">Ubisoft</option>
+                  <option value="battlenet">Battle.net</option>
+                  <option value="origin">Origin</option>
+                  <option value="gog">GOG Games</option>
+                  <option value="mscstore">Miscrosoft Store</option>
+                  <option value="xbox">Xbox App</option>
+                </select>
+              </section>
+            </div>
+            <hr />
+            <div class="szakasz">
+              <p class="szakaszcim">3. Szokásokkal kapcsolatos kérdések</p>
+              <p class="kerdes">Naponta hány órát tölt el képernyő előtt?</p>
+              <section class="felsorolas">
+                <div class="label">
+                  <input
+                    type="range"
+                    name="ido"
+                    id="ido_input"
+                    min="0"
+                    max="24"
+                    class="csuszka"
+                  /><output id="ora"></output> óra
+                </div>
+              </section>
+              <p class="kerdes">
+                Szokota közvetíteni a saját játékat valamilyen streaming
+                platformon?
+              </p>
+              <section class="felsorolas">
+                <label
+                  ><input
+                    type="radio"
+                    name="jatszik"
+                    id="Igen"
+                    class="csuszka"
+                  />
+                  Igen</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="jatszik"
+                    id="Nem"
+                    class="csuszka"
+                  />
+                  Nem</label
+                >
+              </section>
+            </div>
+          </div>
+          <hr />
+          <div class="gomb">
+            <input type="submit" class="urlap_gomb" onclick="thx()" />
+            <input type="reset" class="urlap_gomb" onclick="urit()" />
+          </div>
+        </form>
+      </div>
+    </article>
+    <!-- Ezt a JS kódót nem én írtam. Forrás megjelölve a readme.txt-ben -->
+    <script>
+      const value = document.querySelector("#ora");
+      const input = document.querySelector("#ido_input");
+      value.textContent = input.value;
+      input.addEventListener("input", (event) => {
+        value.textContent = event.target.value;
+      });
+    </script>
+    <!-- Idáig tart a másolt kód. -->
+    <footer>
+      <hr />
+      <p class="labjegyzet">
+        Kizárólag oktatási célokat szolgál © Készítette: Bimbó Csaba - 2023.
+      </p>
+    </footer>
+  </body>
+</html>

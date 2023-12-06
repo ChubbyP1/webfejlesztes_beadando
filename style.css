@@ -1,0 +1,325 @@
+/* Alapok */
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: SourceCodePro;
+  src: url("./Fonts/SourceCodePro-VariableFont_wght.ttf");
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Fejléc */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background {
+  background-image: url("./Kepek/bg1.png");
+  height: 335px;
+  background-attachment: unset;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: space-between;
+  position: relative;
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+h1 {
+  font-weight: bolder;
+  color: white;
+  font-size: 30px;
+  font-family: SourceCodePro;
+  align-items: center;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+}
+
+nav li {
+  display: flex;
+  margin-right: 0;
+  margin-bottom: 2px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+nav li a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  font-family: SourceCodePro;
+  background-color: #121212;
+  padding: 6px 10px 6px 10px;
+  width: 80%;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+nav li a:hover {
+  background-color: grey;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+}
+
+.current {
+  border-style: solid;
+  border-color: rgb(70, 70, 70);
+  background-color: gray;
+  color: white;
+}
+
+/* Szövegtörzs */
+article {
+  padding: 5px 10% 5px 10%;
+  font-family: SourceCodePro;
+}
+
+div.szoveg {
+  text-align: justify;
+  font-size: 16px;
+  color: white;
+  margin: 10px;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: rgb(70, 70, 70);
+}
+
+div.jatekok {
+  display: flex;
+  background-color: rgb(70, 70, 70);
+  margin: 5px;
+  padding: 6px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.szakasz {
+  justify-content: center;
+}
+
+.kerdo {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  text-align: left;
+}
+
+hr {
+  width: 100%;
+}
+
+.szakaszcim {
+  display: flex;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+label,
+.label {
+  width: 100%;
+  margin-left: 15%;
+  text-align: left;
+}
+
+.kerdes {
+  margin-left: 15%;
+}
+
+.felsorolas {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+#szjsz {
+  width: 20%;
+  margin-left: 15%;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+tr.items {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+td {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+select {
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
+
+.gomb {
+  display: flex;
+  justify-content: center;
+}
+
+.urlap_gomb {
+  color: white;
+  background-color: rgb(53, 53, 53);
+  font-weight: bold;
+  font-size: medium;
+  font-family: SourceCodePro;
+  margin-right: 10px;
+}
+
+.urlap_gomb:hover,
+option:hover,
+.pipal:hover,
+.csuszka:hover,
+.datum_kerdo:hover {
+  cursor: pointer;
+}
+
+p.cim {
+  font-size: 19px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+p.forras {
+  font-size: 10px;
+  font-style: italic;
+}
+
+a.link {
+  text-decoration: underline;
+  color: white;
+}
+
+img {
+  max-width: 85%;
+  height: auto;
+  margin-top: 6px;
+}
+
+img.borito {
+  max-height: 200px;
+  width: auto;
+}
+
+div.site_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hibaüzenetek */
+label.error {
+  color: red;
+  font-weight: bolder;
+}
+
+/* Lábléc */
+footer {
+  color: white;
+}
+
+.labjegyzet {
+  font-size: 15px;
+  text-align: center;
+  padding: 0 5% 0 5%;
+}
+
+/* Scrollbar - Görgetősáv */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(194, 193, 193);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
+}
+
+/* Reszponzivitás */
+@media all and (min-width: 640px) {
+  nav ul {
+    flex-direction: row;
+  }
+}
+
+/* Tabletek és asztali gépek */
+@media all and (min-width: 768px) {
+  .background {
+    height: 200px;
+  }
+  tr.items {
+    flex-direction: row;
+  }
+}
+
+/* Asztali gépek */
+@media all and (min-width: 1024px) {
+}
+
+/* Nagyobb asztali gépek */
+@media all and (min-width: 1280px) {
+  img {
+    max-width: 65%;
+  }
+}
